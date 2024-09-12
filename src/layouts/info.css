@@ -1,0 +1,45 @@
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #e2dbe5;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #FF69B4; /* Pink color */
+    color: white;
+  }
+  
+  .user-table td {
+    background-color: #FCE4EC; /* Light Pink color */
+  }
+  
+  .user-table tr:hover {
+    background-color: #FFC0CB; /* Lighter Pink color on hover */
+  }
+  
+
+
+
+  .profile-container {
+    max-width: 800px;
+    width: 100%;
+    margin-top: -15%;
+  }
+  
+  .profile-header {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-content p {
+    font-size: 1.25rem;
+    line-height: 1.75;
+  }
+  

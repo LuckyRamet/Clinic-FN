@@ -1,0 +1,108 @@
+.all-background-container {
+    background-image: url('../assets/bg3.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  
+  
+  .image-container img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+  }
+  
+  .main-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: black;
+  }
+  
+  .min-heading {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: black;
+  }
+  
+  .sub-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: black;
+  }
+  
+  .btn {
+    margin: 0.5rem;
+    background-color: #0071e3;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .btn:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+  }
+  
+  .btn:focus {
+    background-color: #005bb5;
+    transform: scale(1.05);
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Animation */
+  @keyframes buttonClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+  }
+  
+  .animate-button {
+    animation: buttonClick 0.3s ease;
+  }
+  
+  
+  
+  /* Define keyframes for a continuous bounce effect */
+  @keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  }
+  
+  /* Apply animation to the form */
+  .animated-form {
+  animation: bounce 2s infinite;
+  }

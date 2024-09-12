@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+    
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/styles4.css"></script>
+    
+  </body>
+  <div class="characters">
+    <img draggable="false" src="https://static.wikia.nocookie.net/bocchi-the-rock/images/9/98/Hitori_Gotoh_Character_Design_2.png" alt="">
+  </div>
+  
+  <div class="dialogue-box">
+    <div class="dialogue-text">
+      <h3 class="name"></h3>
+      <div class="division"></div>
+      <p class="text"></p>
+      
+      <svg class="caret" viewBox="0 0 320 512" width="100" title="sort-down">
+    <path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z" />
+  </svg>
+    </div>
+  </head>
+  <body>
+
+    
+
+    <script>
+      // สร้าง Audio object
+      var audio = new Audio('ohayou.mp3');
+
+      // เล่นเสียงเมื่อหน้าเว็บโหลด
+      window.onload = function() {
+          audio.play();
+      };
+  </script>
+
+</body>
+
+  <body>
+    <div class="name"></div>
+    <div class="text"></div>
+    <div class="caret"></div>
+  
+    <script>
+      const $name = document.querySelector(".name")
+      const $text = document.querySelector(".text")
+      const $caret = document.querySelector(".caret")
+  
+      let step = 0
+      let counter
+      let drawing
+  
+      const rei = ["Hitori"];
+      const reii = ["ABCKun"];
+      const storyData = [
+        {
+          name: rei,
+          text: "สวัสดีตอนเช้านะ ABCKun😊"
+          
+        },
+        {
+          name: reii,
+          text: "รุ่นพี่ Hitori !"
+          
+        },
+        {
+          name: reii,
+          text: "🥺😢😭"
+        },
+        {
+          name: rei,
+          text: "เป็นอะไรหรือเปล่า?"
+        },
+        {
+          name: rei,
+          text: "ร้องไห้ทำไมเนี่ย?"
+        },
+        {
+          name: reii,
+          text: "ผมไม่ได้ร้องซักหน่อย🤧"
+        },
+        {
+          name: rei,
+          text: "ก็เห็นๆกันอยู่ว่าร้องไห้🤔"
+        },
+        {
+          name: rei,
+          text: "เป็นอะไรไหนลองเล่าให้ฉันฟังที่สิ!"
+        },
+        {
+          name: reii,
+          text: "ผมไม่ได้เป็นอะไรครับ"
+        },
+        {
+          name: reii,
+          text: "ตอนนี้ได้เวลาเรียนเเล้วนะครับ"
+        },
+        {
+          name: reii,
+          text: "ผมต้องเข้าห้องเรียนเเล้ว"
+        },
+        {
+          name: reii,
+          text: "งั้นไว้เจอกันอีกทีนะครับรุ่นพี่ Hitori 🏃‍♂️"
+        },
+      ]
+      let currentStoryData
+  
+      function update() {
+    currentStoryData = storyData[step];
+    $name.textContent = currentStoryData.name;
+
+    counter = 0;
+    drawing = setInterval(() => {
+        do {
+            $text.textContent += currentStoryData.text[counter];
+            counter++;
+        } while (currentStoryData.text[counter] === " ");
+
+        if (counter >= currentStoryData.text.length) {
+            counter = 0;
+            clearInterval(drawing);
+            if (step != storyData.length - 1) {
+                $caret.classList.add("active");
+            } else {
+                // Delay for 2 seconds before redirecting to another HTML page when the story ends
+                setTimeout(() => {
+                    window.location.href = 'index7.html'; // Change 'index4.html' to the desired page
+                }, 2000);
+            }
+            drawing = null;
+        }
+    }, 50);
+}
+
+update();
+
+document.addEventListener("click", () => {
+    if (drawing) {
+        clearInterval(drawing);
+        drawing = null;
+        if (step != storyData.length - 1) {
+            $caret.classList.add("active");
+        }
+        $text.textContent = currentStoryData.text;
+        return;
+    }
+    if (step == storyData.length - 1) {
+        // place ending here
+        // Redirect to another HTML page when the story ends with a 2-second delay
+        setTimeout(() => {
+            window.location.href = 'index7.html'; // Change 'index4.html' to the desired page
+        }, 2000);
+        return;
+    }
+
+    $caret.classList.remove("active");
+    $text.textContent = "";
+    step++;
+    update();
+        });
+    </script>
+    
+  </body>
+  </div>
+  
+
+</html>

@@ -1,0 +1,19 @@
+.table-container {
+  background-color: white;
+  color: black;
+}
+
+.table-container th,
+.table-container td {
+  color: black;
+}
+
+.table-container tr:hover {
+  background-color: #f0f0f0; /* Lighter background on hover */
+}
+
+
+
+.button-edit:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,106 @@
+
+
+
+:root {
+  --dialog-box-color: #E91E63c7;
+}
+
+body {
+  background-color: black;
+  background-image: url("wp3738656 (1).png"); 
+  background-size: auto 100vh;
+  background-repeat: no-repeat;
+  background-position: center 0;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.dialogue-box {
+  width: 70%; /* Adjust the width as needed */
+  height: 20%; /* Adjust the height as needed */
+  aspect-ratio: 6 / 1;
+  background-color: var(--dialog-box-color);
+  background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%239C92AC" fill-opacity="0.2" fill-rule="evenodd"%3E%3Cpath d="M0 40L40 0H20L0 20M40 40V20L20 40"/%3E%3C/g%3E%3C/svg%3E');
+  z-index: 999;
+  position: absolute;
+  bottom: 5vh;
+  font-size: 2vh; /* Adjust the font size as needed */
+  user-select: none;
+  border-radius: .75rem;
+  animation: move-right 45s infinite linear;
+}
+.dialogue-box * {
+  margin: 0;
+}
+
+.dialogue-text {
+  padding: 1vh; /* Adjust the padding as needed */
+  font-family: Montserrat, sans-serif;
+  color: white;
+}
+
+.name {
+  font-style: italic;
+}
+
+.division {
+  height: .25vh; /* Adjust the height as needed */
+  background-image: linear-gradient(to right, white, transparent);
+  margin-block: 0.5vh; /* Adjust the margin as needed */
+}
+
+.none {
+  display: none;
+}
+
+.caret {
+  color: white;
+  fill: white;
+  position: absolute;
+  width: 2.5vh; /* Adjust the width as needed */
+  height: auto;
+  bottom: 0.625vh; /* Adjust the bottom position as needed */
+  right: 1vh; /* Adjust the right position as needed */
+  opacity: 0;
+  transition: opacity 500ms ease;
+  animation: bounce 1s infinite ease-in-out both;
+}
+
+.caret.active {
+  opacity: 1;
+}
+
+@keyframes move-right {
+  to {
+    background-position: 100%;
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-10%);
+  }
+  
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* characters */
+
+.characters {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.characters img {
+  height: 80%; /* Adjust the height as needed */
+  width: auto;
+  position: absolute;
+  bottom: 0;
+  user-select: none;
+}
+
+

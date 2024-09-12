@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+    
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/styles12.css"></script>
+    
+  </body>
+  <div class="characters">
+    <img draggable="false" src="" alt="">
+  </div>
+  
+  <div class="dialogue-box">
+    <div class="dialogue-text">
+      <h3 class="name"></h3>
+      <div class="division"></div>
+      <p class="text"></p>
+      
+      <svg class="caret" viewBox="0 0 320 512" width="100" title="sort-down">
+    <path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z" />
+  </svg>
+    </div>
+  </head>
+  <body>
+
+    
+
+    <script>
+        // สร้าง Audio object
+        var audio = new Audio('soft-piano-100-bpm-121529.mp3');
+      
+        // เล่นเสียงเมื่อหน้าเว็บโหลด
+        window.onload = function() {
+          audio.play();
+         
+        };
+      </script>
+
+</body>
+
+  <body>
+    <div class="name"></div>
+    <div class="text"></div>
+    <div class="caret"></div>
+  
+    <script>
+      const $name = document.querySelector(".name")
+      const $text = document.querySelector(".text")
+      const $caret = document.querySelector(".caret")
+  
+      let step = 0
+      let counter
+      let drawing
+  
+      const re = [""];
+      const rei = ["Hitori"];
+      const reii = ["ABCKun"];
+      const storyData = [
+        {
+          name: reii,
+          text: "(ABCKun ได้หายใจเข้าลึกๆ)"
+        },
+        {
+          name: reii,
+          text: "รุ่นพี่ Hitori ครับ!"
+        },
+        {
+          name: rei,
+          text: "อะไรหรอ?"
+        },
+        {
+          name: reii,
+          text: "ผมจะไปเเสดงดนตรีที่งานเทศกาลในโรงเรียนจะจัดขึ้นครับ!"
+        },
+        {
+          name: reii,
+          text: "เพราะงั้นรุ่นพี่มาดูผมเเสดงดนตรีด้วยนะครับ!"
+        },
+        {
+          name: rei,
+          text: "ได้สิ จะไปดูนะ ขอสัญญาเลย!"
+        },
+        
+      ]
+      let currentStoryData
+  
+      function update() {
+    currentStoryData = storyData[step];
+    $name.textContent = currentStoryData.name;
+
+    counter = 0;
+    drawing = setInterval(() => {
+        do {
+            $text.textContent += currentStoryData.text[counter];
+            counter++;
+        } while (currentStoryData.text[counter] === " ");
+
+        if (counter >= currentStoryData.text.length) {
+            counter = 0;
+            clearInterval(drawing);
+            if (step != storyData.length - 1) {
+                $caret.classList.add("active");
+            } else {
+                // Delay for 2 seconds before redirecting to another HTML page when the story ends
+                setTimeout(() => {
+                    window.location.href = 'index16.html'; // Change 'index4.html' to the desired page
+                }, 18000);
+            }
+            drawing = null;
+        }
+    }, 50);
+}
+
+update();
+
+document.addEventListener("click", () => {
+    if (drawing) {
+        clearInterval(drawing);
+        drawing = null;
+        if (step != storyData.length - 1) {
+            $caret.classList.add("active");
+        }
+        $text.textContent = currentStoryData.text;
+        return;
+    }
+    if (step == storyData.length - 1) {
+        // place ending here
+        // Redirect to another HTML page when the story ends with a 2-second delay
+        setTimeout(() => {
+            window.location.href = 'index16.html'; // Change 'index4.html' to the desired page
+        }, 2000);
+        return;
+    }
+
+    $caret.classList.remove("active");
+    $text.textContent = "";
+    step++;
+    update();
+        });
+    </script>
+    
+  </body>
+  </div>
+  
+
+</html>

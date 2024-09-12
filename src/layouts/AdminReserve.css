@@ -1,0 +1,90 @@
+/* ปุ่มยืนยันการจอง */
+.button-approve {
+  background-color: #10b981; /* สีเขียว */
+  color: white;
+  padding: 0.75rem 1.5rem; /* เพิ่มขนาดปุ่ม */
+  border-radius: 50px; /* ทำให้ปุ่มกลม */
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.5); /* เพิ่มเงา */
+  transition: all 0.3s ease; /* เปลี่ยนเอฟเฟกต์ทุกอย่าง */
+}
+
+.button-approve:hover {
+  background-color: #059669; /* สีเขียวเข้มขึ้นเมื่อ hover */
+  transform: scale(1.05); /* ขยายปุ่มเมื่อ hover */
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.7); /* เพิ่มความเข้มของเงา */
+}
+
+/* ปุ่มยกเลิกการจอง */
+.button-cancel {
+  background-color: #ef4444; /* สีแดง */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px; /* ทำให้ปุ่มกลม */
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.5); /* เพิ่มเงา */
+  transition: all 0.3s ease; /* เปลี่ยนเอฟเฟกต์ทุกอย่าง */
+}
+
+.button-cancel:hover {
+  background-color: #dc2626; /* สีแดงเข้มขึ้นเมื่อ hover */
+  transform: scale(1.05); /* ขยายปุ่มเมื่อ hover */
+  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.7); /* เพิ่มความเข้มของเงา */
+}
+
+/* สไตล์ SweetAlert */
+.swal2-title {
+  font-size: 2rem !important; /* ขนาดใหญ่ขึ้น */
+  color: #111827; /* สีเทาเข้ม */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.swal2-confirm {
+  background-color: #6ce950 !important;
+  color: white !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  border-radius: 50px !important;
+  box-shadow: 0 4px 10px rgba(48, 133, 214, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.swal2-confirm:hover {
+  background-color: #5fbd61 !important; /* สีฟ้าเข้มขึ้นเมื่อ hover */
+  transform: scale(1.05) !important; /* ขยายปุ่มเมื่อ hover */
+  box-shadow: 0 6px 14px rgba(48, 214, 70, 0.7) !important; /* เพิ่มความเข้มของเงา */
+}
+
+.swal2-cancel {
+  background-color: #ef4444 !important;
+  color: white !important;
+  padding: 0.75rem 1.5rem !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  border-radius: 50px !important;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.5) !important;
+  transition: all 0.3s ease !important;
+}
+
+.swal2-cancel:hover {
+  background-color: #dc2626 !important; /* สีแดงเข้มขึ้นเมื่อ hover */
+  transform: scale(1.05) !important; /* ขยายปุ่มเมื่อ hover */
+  box-shadow: 0 6px 14px rgba(239, 68, 68, 0.7) !important; /* เพิ่มความเข้มของเงา */
+}
+
+.swal2-footer a {
+  color: #3085d6 !important;
+  text-decoration: underline !important;
+  transition: color 0.3s ease !important;
+}
+
+.swal2-footer a:hover {
+  color: #2563eb !important; /* สีเข้มขึ้นเมื่อ hover */
+}

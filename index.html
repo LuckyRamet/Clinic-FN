@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+  </body>
+  <div class="characters">
+    
+  
+
+    
+  
+  
+    
+</div>
+
+
+  <!-- <div class="dialogue-box">
+    <div class="dialogue-text">
+      <h3 class="name"></h3>
+      <div class="division"></div>
+      <p class="text"></p>
+      
+      <svg class="caret" viewBox="0 0 320 512" width="100" title="sort-down">
+    <path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41z" />
+  </svg>
+    </div>
+  </head> -->
+
+  <!-- <body>
+    <div class="name"></div>
+    <div class="text"></div>
+    <div class="caret"></div>
+  
+    <script>
+      const $name = document.querySelector(".name")
+      const $text = document.querySelector(".text")
+      const $caret = document.querySelector(".caret")
+  
+      let step = 0
+      let counter
+      let drawing
+  
+    //   const rei = ["Click 1-100 to Play Game"];
+      
+    //   const storyData = [
+    //     {
+    //       name: rei,
+    //       text: "1"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "2"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "3"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "4"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "5"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "6"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "7"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "8"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "9"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "10"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "11"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "12"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "13"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "14"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "15"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "16"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "17"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "18"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "19"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "20"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "21"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "22"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "23"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "24"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "25"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "26"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "27"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "28"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "29"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "30"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "31"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "32"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "33"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "34"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "35"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "36"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "37"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "38"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "39"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "40"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "41"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "42"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "43"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "44"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "45"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "46"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "47"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "48"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "49"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "50"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "51"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "52"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "53"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "54"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "55"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "56"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "57"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "58"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "59"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "60"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "61"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "62"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "63"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "64"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "65"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "66"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "67"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "68"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "69"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "70"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "71"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "72"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "73"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "74"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "65"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "76"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "77"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "78"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "79"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "80"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "81"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "82"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "83"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "84"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "85"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "86"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "87"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "88"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "89"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "90"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "91"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "92"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "93"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "94"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "95"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "96"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "97"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "98"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "99"
+    //     },
+    //     {
+    //       name: rei,
+    //       text: "100"
+    //     },
+    //   ]
+    //   let currentStoryData
+  
+    //   function update() {
+    //         currentStoryData = storyData[step];
+    //         $name.textContent = currentStoryData.name;
+
+    //         counter = 0;
+    //         drawing = setInterval(() => {
+    //             do {
+    //                 $text.textContent += currentStoryData.text[counter];
+    //                 counter++;
+    //             } while (currentStoryData.text[counter] === " ");
+
+    //             if (counter >= currentStoryData.text.length) {
+    //                 counter = 0;
+    //                 clearInterval(drawing);
+    //                 if (step != storyData.length - 1) {
+    //                     $caret.classList.add("active");
+    //                 } else {
+    //                     // Redirect to another HTML page when the story ends
+    //                     window.location.href = 'index2.html'; // Change 'nextPage.html' to the desired page
+    //                 }
+    //                 drawing = null;
+    //             }
+    //         }, 50);
+    //     }
+
+    //     update();
+
+    //     document.addEventListener("click", () => {
+    //         if (drawing) {
+    //             clearInterval(drawing);
+    //             drawing = null;
+    //             if (step != storyData.length - 1) {
+    //                 $caret.classList.add("active");
+    //             }
+    //             $text.textContent = currentStoryData.text;
+    //             return;
+    //         }
+    //         if (step == storyData.length - 1) {
+    //             // place ending here
+    //             // Redirect to another HTML page when the story ends
+    //             window.location.href = 'index2.html'; // Change 'nextPage.html' to the desired page
+    //             return;
+    //         }
+
+    //         $caret.classList.remove("active");
+    //         $text.textContent = "";
+    //         step++;
+    //         update();
+    //     });
+    // </script> -->
+    
+  </body>
+  </div>
+    
+  </body>
+  </div>
+  
+
+</html>
