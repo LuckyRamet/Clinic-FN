@@ -15,7 +15,7 @@ function ReservedContextProvider(props) {
       try {
         let token = localStorage.getItem('token')
         if (!token) { return }
-        const rs = await axios.get("http://localhost:8000/booking/showmew", {
+        const rs = await axios.get("https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/showmew", {
           headers: { Authorization: `Bearer ${token}` }
         })
         // console.log(rs.data)
@@ -33,7 +33,7 @@ function ReservedContextProvider(props) {
       try {
         let token = localStorage.getItem('token')
         if (!token) { return }
-        const rs = await axios.get("http://localhost:8000/booking/show", {
+        const rs = await axios.get("https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/show", {
           headers: { Authorization: `Bearer ${token}` }
         })
         // console.log(rs.data)
@@ -51,10 +51,10 @@ function ReservedContextProvider(props) {
       try {
         let token = localStorage.getItem('token')
         if (!token) { return }
-        const rs = await axios.get("http://localhost:8000/booking/admin/show", {
+        const rs = await axios.get("https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/admin/show", {
           headers: { Authorization: `Bearer ${token}` }
         })
-        const doctorResponse = await axios.get("http://localhost:8000/booking/doctor/show", {
+        const doctorResponse = await axios.get("https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/doctor/show", {
           headers: { Authorization: `Bearer ${token}` }
         })
         // console.log(rs.data)
@@ -72,7 +72,7 @@ function ReservedContextProvider(props) {
   const createBooking = async (input) => {
     try {
       // console.log(input);
-      const rs = await axios.post(`http://localhost:8000/booking/creacte`, input)
+      const rs = await axios.post(`https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/creacte`, input)
       if (rs.status === 200) {
         // location.replace('/reserve')
 
@@ -85,7 +85,7 @@ function ReservedContextProvider(props) {
 
   const updateStatusReserved = async (bookingId, status) => {
     try {
-      await axios.patch(`http://localhost:8000/booking/update/${bookingId}`, { status });
+      await axios.patch(`https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/update/${bookingId}`, { status });
       setTrigger(prv => !prv)
       // if (re.status === 200) {
       // }
@@ -97,7 +97,7 @@ function ReservedContextProvider(props) {
   }
   const doctorUpdateStatusReserved = async (bookingId, status) => {
     try {
-      await axios.patch(`http://localhost:8000/booking/update/${bookingId}`, status);
+      await axios.patch(`https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/update/${bookingId}`, status);
       setTrigger(prv => !prv)
     } catch (error) {
       alert(error.message)
@@ -105,7 +105,7 @@ function ReservedContextProvider(props) {
   }
   const updateUserSeenStatus = async (bookingId, seen) => {
     try {
-      await axios.patch(`http://localhost:8000/booking/update/${bookingId}`, { seen });
+      await axios.patch(`https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/update/${bookingId}`, { seen });
       setTrigger(prv => !prv)
       // if (re.status === 200) {
       // }
@@ -120,7 +120,7 @@ function ReservedContextProvider(props) {
     try {
       console.log(data)
       const token = localStorage.getItem('token')
-      const rs = await axios.patch(`http://localhost:8000/booking/patch/${bookingId}`, data, {
+      const rs = await axios.patch(`https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/patch/${bookingId}`, data, {
         headers: { Authorization: `Bearer ${token}` }
       })
       if (rs.status === 200) {

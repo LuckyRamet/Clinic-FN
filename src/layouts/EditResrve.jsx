@@ -14,7 +14,7 @@ export default function Edit() {
                 const token = localStorage.getItem('token');
                 if (!token) return;
 
-                const rs = await axios.get(`http://localhost:8000/booking/${id}`, {
+                const rs = await axios.get(`https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/booking/${id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
 

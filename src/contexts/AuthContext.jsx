@@ -14,7 +14,7 @@ function AuthContextProvider(props) {
         setLoading(true)
         let token = localStorage.getItem('token')
         if(!token) { return }
-        const rs = await axios.get('http://localhost:8000/auth/me', {
+        const rs = await axios.get('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/auth/me', {
           headers : { Authorization : `Bearer ${token}` }
         })
         setUser(rs.data)
@@ -34,7 +34,7 @@ function AuthContextProvider(props) {
 
   const updateProfile = async (data) => {
     const token = localStorage.getItem('token')
-    await axios.patch('http://localhost:8000/info/patch', data, {
+    await axios.patch('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/info/patch', data, {
       headers: {Authorization: `Bearer ${token}`}
     })
     alert('Update Profile Success!!')
