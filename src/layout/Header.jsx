@@ -2,6 +2,7 @@
 
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../hooks/useAuth';
+import img from '../1.7.jpg'
 
 const guestNav = [
   { to: '/Dental', text: 'ปัญหากลิ่นปาก' },
@@ -46,7 +47,7 @@ export default function Header() {
         <div className="flex-1 flex items-center">
           <Link to="/" className="mr-4">
             <img
-              src="../1.7.jpg"
+              src={img}
               className="w-20 h-20 rounded-full border-2 border-pink-500"
               alt="Logo"
             />
