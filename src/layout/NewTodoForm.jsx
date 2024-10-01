@@ -40,7 +40,8 @@ function AddFormBooking() {
 }
 
 function FormNew({ user }) {
-  const { createBooking, data } = useContext(ReservedContext);
+  const { createBooking, datas } = useContext(ReservedContext);
+  console.log (datas)
   const [time, setTime] = useState(null);
   const [input, setInput] = useState({
     datetime: new Date().toLocaleString("th-TH", {
@@ -82,8 +83,8 @@ function FormNew({ user }) {
     setTime(e.target.value);
   };
 
-  const findTime = data?.map(el => el.datetime.split('T')[1].slice(0, 8));
-  const findDay = data?.map(el => el.datetime.split('T')[0]);
+  const findTime = datas?.map(el => el.datetime.split('T')[1].slice(0, 8));
+  const findDay = datas?.map(el => el.datetime.split('T')[0]);
 
   return (
     <motion.form

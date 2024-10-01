@@ -4,11 +4,30 @@ import React, { createContext, useEffect, useState } from "react";
 const ReservedContext = createContext()
 
 function ReservedContextProvider(props) {
+  const [datas, setDatas] = useState(null)
   const [data, setData] = useState(null)
   const [adminData, setAdminData] = useState(null)
   const [doctorData, setDoctorData] = useState(null)
   const [trigger, setTrigger] = useState(false)
 
+  useEffect(() => {
+    const showBooking = async () => {
+      try {
+        let token = localStorage.getItem('token')
+        if (!token) { return }
+        const rs = await axios.get("http://localhost:8000/booking/showmew", {
+          headers: { Authorization: `Bearer ${token}` }
+        })
+        // console.log(rs.data)
+        setDatas(rs.data)
+
+      } catch (error) {
+        alert(error);
+      }
+    };
+
+    showBooking();
+  }, [trigger])
   useEffect(() => {
     const showBooking = async () => {
       try {
@@ -27,7 +46,6 @@ function ReservedContextProvider(props) {
 
     showBooking();
   }, [trigger])
-
   useEffect(() => {
     const showBooking = async () => {
       try {
@@ -117,7 +135,7 @@ function ReservedContextProvider(props) {
   }
 
   return (
-    <ReservedContext.Provider value={{ data, createBooking, adminData, doctorData, updateStatusReserved, updateBooking, updateUserSeenStatus, doctorUpdateStatusReserved }}>
+    <ReservedContext.Provider value={{ datas,data, createBooking, adminData, doctorData, updateStatusReserved, updateBooking, updateUserSeenStatus, doctorUpdateStatusReserved }}>
       {props.children}
     </ReservedContext.Provider>
   );
