@@ -46,7 +46,7 @@ export default function Header() {
         <div className="flex-1 flex items-center">
           <Link to="/" className="mr-4">
             <img
-              src="1.7.jpg"
+              src="../1.7.jpg"
               className="w-20 h-20 rounded-full border-2 border-pink-500"
               alt="Logo"
             />
