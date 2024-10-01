@@ -23,9 +23,9 @@ export default function LoginForm() {
       e.preventDefault();
 
       // validation
-      const rs = await axios.post('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/auth/login', input);
+      const rs = await axios.post('https://clinic-bn.vercel.app/auth/login', input);
       localStorage.setItem('token', rs.data.token);
-      const rs1 = await axios.get('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/auth/me', {
+      const rs1 = await axios.get('https://clinic-bn.vercel.app/auth/me', {
         headers: { Authorization: `Bearer ${rs.data.token}` }
       });
       navigate('/home');

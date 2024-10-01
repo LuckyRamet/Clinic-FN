@@ -14,10 +14,10 @@ function InfoContextProvider(props) {
         setLoading(true)
         let token = localStorage.getItem('token')
         if(!token) { return }
-        const rs = await axios.get('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/info/infomation', {
+        const rs = await axios.get('https://clinic-bn.vercel.app/info/infomation', {
           headers : { Authorization : `Bearer ${token}` }
         })
-        const wala = await axios.get('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/info/getall', {
+        const wala = await axios.get('https://clinic-bn.vercel.app/info/getall', {
           headers : { Authorization : `Bearer ${token}` }
         })
         setMember(wala.data)

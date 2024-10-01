@@ -10,7 +10,7 @@ export default function UserHome() {
   //   const fetchTodos = async () => {
   //     try {
   //       let token = localStorage.getItem('token')
-  //       const response = await axios.get('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/todos', {
+  //       const response = await axios.get('https://clinic-bn.vercel.app/todos', {
   //         headers: { Authorization: Bearer ${token} }
   //       })
   //       setTodos(response.data.todos)

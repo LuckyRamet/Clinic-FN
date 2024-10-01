@@ -21,7 +21,8 @@ export default function RegisterForm() {
   const hdlSubmit = async e => {
     try {
       e.preventDefault();
-      const rs = await axios.post('https://clinic-bn-oqdbt1mev-abckuns-projects.vercel.app/auth/register', input);
+      console.log(input)
+      const rs = await axios.post('https://clinic-bn.vercel.app/auth/register', input);
       if (rs.status === 200) {
         Swal.fire({
           position: "center",
