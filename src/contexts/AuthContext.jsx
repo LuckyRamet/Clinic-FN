@@ -24,6 +24,7 @@ function AuthContextProvider(props) {
         setLoading(false)
       }   
     }
+    
     run()
   }, [])
 
